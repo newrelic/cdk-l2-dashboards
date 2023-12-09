@@ -92,12 +92,24 @@ public delete(guid: string): IDashboardDeleteResult
 ##### `list` <a name="list" id="@newrelic/cdk-l2-dashboards.DashboardManager.list"></a>
 
 ```typescript
-public list(query: string): IDashboardListResult
+public list(query?: string, cursor?: string, options?: IQueryOptions): IDashboardListResult
 ```
 
-###### `query`<sup>Required</sup> <a name="query" id="@newrelic/cdk-l2-dashboards.DashboardManager.list.parameter.query"></a>
+###### `query`<sup>Optional</sup> <a name="query" id="@newrelic/cdk-l2-dashboards.DashboardManager.list.parameter.query"></a>
 
 - *Type:* string
+
+---
+
+###### `cursor`<sup>Optional</sup> <a name="cursor" id="@newrelic/cdk-l2-dashboards.DashboardManager.list.parameter.cursor"></a>
+
+- *Type:* string
+
+---
+
+###### `options`<sup>Optional</sup> <a name="options" id="@newrelic/cdk-l2-dashboards.DashboardManager.list.parameter.options"></a>
+
+- *Type:* <a href="#@newrelic/cdk-l2-dashboards.IQueryOptions">IQueryOptions</a>
 
 ---
 
@@ -3899,7 +3911,7 @@ new Tag()
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@newrelic/cdk-l2-dashboards.Tag.property.key">key</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@newrelic/cdk-l2-dashboards.Tag.property.values">values</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@newrelic/cdk-l2-dashboards.Tag.property.values">values</a></code> | <code>string[]</code> | *No description.* |
 
 ---
 
@@ -3916,10 +3928,10 @@ public readonly key: string;
 ##### `values`<sup>Required</sup> <a name="values" id="@newrelic/cdk-l2-dashboards.Tag.property.values"></a>
 
 ```typescript
-public readonly values: string;
+public readonly values: string[];
 ```
 
-- *Type:* string
+- *Type:* string[]
 
 ---
 
@@ -4015,7 +4027,7 @@ public readonly dashboardDelete: DashboardDeleteResult;
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@newrelic/cdk-l2-dashboards.IDashboardListResult.property.actor">actor</a></code> | <code><a href="#@newrelic/cdk-l2-dashboards.IEntitySearchResult">IEntitySearchResult</a></code> | *No description.* |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IDashboardListResult.property.actor">actor</a></code> | <code><a href="#@newrelic/cdk-l2-dashboards.IEntitySearch">IEntitySearch</a></code> | *No description.* |
 | <code><a href="#@newrelic/cdk-l2-dashboards.IDashboardListResult.property.errors">errors</a></code> | <code>any[]</code> | *No description.* |
 
 ---
@@ -4023,10 +4035,10 @@ public readonly dashboardDelete: DashboardDeleteResult;
 ##### `actor`<sup>Optional</sup> <a name="actor" id="@newrelic/cdk-l2-dashboards.IDashboardListResult.property.actor"></a>
 
 ```typescript
-public readonly actor: IEntitySearchResult;
+public readonly actor: IEntitySearch;
 ```
 
-- *Type:* <a href="#@newrelic/cdk-l2-dashboards.IEntitySearchResult">IEntitySearchResult</a>
+- *Type:* <a href="#@newrelic/cdk-l2-dashboards.IEntitySearch">IEntitySearch</a>
 
 ---
 
@@ -4086,6 +4098,183 @@ public readonly dashboardUpdate: DashboardUpdateResult;
 
 ---
 
+### IEntity <a name="IEntity" id="@newrelic/cdk-l2-dashboards.IEntity"></a>
+
+- *Implemented By:* <a href="#@newrelic/cdk-l2-dashboards.IEntity">IEntity</a>
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IEntity.property.accountId">accountId</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IEntity.property.alertSeverity">alertSeverity</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IEntity.property.createdAt">createdAt</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IEntity.property.dashboardParentGuid">dashboardParentGuid</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IEntity.property.domain">domain</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IEntity.property.entityType">entityType</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IEntity.property.guid">guid</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IEntity.property.indexedAt">indexedAt</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IEntity.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IEntity.property.permalink">permalink</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IEntity.property.permissions">permissions</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IEntity.property.reporting">reporting</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IEntity.property.tags">tags</a></code> | <code><a href="#@newrelic/cdk-l2-dashboards.ITag">ITag</a>[]</code> | *No description.* |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IEntity.property.type">type</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IEntity.property.updatedAt">updatedAt</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `accountId`<sup>Required</sup> <a name="accountId" id="@newrelic/cdk-l2-dashboards.IEntity.property.accountId"></a>
+
+```typescript
+public readonly accountId: number;
+```
+
+- *Type:* number
+
+---
+
+##### `alertSeverity`<sup>Required</sup> <a name="alertSeverity" id="@newrelic/cdk-l2-dashboards.IEntity.property.alertSeverity"></a>
+
+```typescript
+public readonly alertSeverity: string;
+```
+
+- *Type:* string
+
+---
+
+##### `createdAt`<sup>Required</sup> <a name="createdAt" id="@newrelic/cdk-l2-dashboards.IEntity.property.createdAt"></a>
+
+```typescript
+public readonly createdAt: string;
+```
+
+- *Type:* string
+
+---
+
+##### `dashboardParentGuid`<sup>Required</sup> <a name="dashboardParentGuid" id="@newrelic/cdk-l2-dashboards.IEntity.property.dashboardParentGuid"></a>
+
+```typescript
+public readonly dashboardParentGuid: string;
+```
+
+- *Type:* string
+
+---
+
+##### `domain`<sup>Required</sup> <a name="domain" id="@newrelic/cdk-l2-dashboards.IEntity.property.domain"></a>
+
+```typescript
+public readonly domain: string;
+```
+
+- *Type:* string
+
+---
+
+##### `entityType`<sup>Required</sup> <a name="entityType" id="@newrelic/cdk-l2-dashboards.IEntity.property.entityType"></a>
+
+```typescript
+public readonly entityType: string;
+```
+
+- *Type:* string
+
+---
+
+##### `guid`<sup>Required</sup> <a name="guid" id="@newrelic/cdk-l2-dashboards.IEntity.property.guid"></a>
+
+```typescript
+public readonly guid: string;
+```
+
+- *Type:* string
+
+---
+
+##### `indexedAt`<sup>Required</sup> <a name="indexedAt" id="@newrelic/cdk-l2-dashboards.IEntity.property.indexedAt"></a>
+
+```typescript
+public readonly indexedAt: number;
+```
+
+- *Type:* number
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="@newrelic/cdk-l2-dashboards.IEntity.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
+##### `permalink`<sup>Required</sup> <a name="permalink" id="@newrelic/cdk-l2-dashboards.IEntity.property.permalink"></a>
+
+```typescript
+public readonly permalink: string;
+```
+
+- *Type:* string
+
+---
+
+##### `permissions`<sup>Required</sup> <a name="permissions" id="@newrelic/cdk-l2-dashboards.IEntity.property.permissions"></a>
+
+```typescript
+public readonly permissions: string;
+```
+
+- *Type:* string
+
+---
+
+##### `reporting`<sup>Required</sup> <a name="reporting" id="@newrelic/cdk-l2-dashboards.IEntity.property.reporting"></a>
+
+```typescript
+public readonly reporting: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `tags`<sup>Required</sup> <a name="tags" id="@newrelic/cdk-l2-dashboards.IEntity.property.tags"></a>
+
+```typescript
+public readonly tags: ITag[];
+```
+
+- *Type:* <a href="#@newrelic/cdk-l2-dashboards.ITag">ITag</a>[]
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="@newrelic/cdk-l2-dashboards.IEntity.property.type"></a>
+
+```typescript
+public readonly type: string;
+```
+
+- *Type:* string
+
+---
+
+##### `updatedAt`<sup>Required</sup> <a name="updatedAt" id="@newrelic/cdk-l2-dashboards.IEntity.property.updatedAt"></a>
+
+```typescript
+public readonly updatedAt: string;
+```
+
+- *Type:* string
+
+---
+
 ### IEntityResult <a name="IEntityResult" id="@newrelic/cdk-l2-dashboards.IEntityResult"></a>
 
 - *Implemented By:* <a href="#@newrelic/cdk-l2-dashboards.IEntityResult">IEntityResult</a>
@@ -4109,49 +4298,251 @@ public readonly entity: DashboardEntityResult;
 
 ---
 
-### IEntitySearchResult <a name="IEntitySearchResult" id="@newrelic/cdk-l2-dashboards.IEntitySearchResult"></a>
+### IEntitySearch <a name="IEntitySearch" id="@newrelic/cdk-l2-dashboards.IEntitySearch"></a>
 
-- *Implemented By:* <a href="#@newrelic/cdk-l2-dashboards.IEntitySearchResult">IEntitySearchResult</a>
-
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@newrelic/cdk-l2-dashboards.IEntitySearchResult.property.entitySearch">entitySearch</a></code> | <code><a href="#@newrelic/cdk-l2-dashboards.IResults">IResults</a></code> | *No description.* |
-
----
-
-##### `entitySearch`<sup>Required</sup> <a name="entitySearch" id="@newrelic/cdk-l2-dashboards.IEntitySearchResult.property.entitySearch"></a>
-
-```typescript
-public readonly entitySearch: IResults;
-```
-
-- *Type:* <a href="#@newrelic/cdk-l2-dashboards.IResults">IResults</a>
-
----
-
-### IResults <a name="IResults" id="@newrelic/cdk-l2-dashboards.IResults"></a>
-
-- *Implemented By:* <a href="#@newrelic/cdk-l2-dashboards.IResults">IResults</a>
+- *Implemented By:* <a href="#@newrelic/cdk-l2-dashboards.IEntitySearch">IEntitySearch</a>
 
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@newrelic/cdk-l2-dashboards.IResults.property.results">results</a></code> | <code>any[]</code> | *No description.* |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IEntitySearch.property.entitySearch">entitySearch</a></code> | <code><a href="#@newrelic/cdk-l2-dashboards.IEntitySearchResults">IEntitySearchResults</a></code> | *No description.* |
 
 ---
 
-##### `results`<sup>Required</sup> <a name="results" id="@newrelic/cdk-l2-dashboards.IResults.property.results"></a>
+##### `entitySearch`<sup>Required</sup> <a name="entitySearch" id="@newrelic/cdk-l2-dashboards.IEntitySearch.property.entitySearch"></a>
 
 ```typescript
-public readonly results: any[];
+public readonly entitySearch: IEntitySearchResults;
 ```
 
-- *Type:* any[]
+- *Type:* <a href="#@newrelic/cdk-l2-dashboards.IEntitySearchResults">IEntitySearchResults</a>
+
+---
+
+### IEntitySearchResults <a name="IEntitySearchResults" id="@newrelic/cdk-l2-dashboards.IEntitySearchResults"></a>
+
+- *Implemented By:* <a href="#@newrelic/cdk-l2-dashboards.IEntitySearchResults">IEntitySearchResults</a>
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IEntitySearchResults.property.count">count</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IEntitySearchResults.property.query">query</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IEntitySearchResults.property.results">results</a></code> | <code><a href="#@newrelic/cdk-l2-dashboards.IResult">IResult</a></code> | *No description.* |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IEntitySearchResults.property.types">types</a></code> | <code><a href="#@newrelic/cdk-l2-dashboards.IType">IType</a>[]</code> | *No description.* |
+
+---
+
+##### `count`<sup>Required</sup> <a name="count" id="@newrelic/cdk-l2-dashboards.IEntitySearchResults.property.count"></a>
+
+```typescript
+public readonly count: number;
+```
+
+- *Type:* number
+
+---
+
+##### `query`<sup>Required</sup> <a name="query" id="@newrelic/cdk-l2-dashboards.IEntitySearchResults.property.query"></a>
+
+```typescript
+public readonly query: string;
+```
+
+- *Type:* string
+
+---
+
+##### `results`<sup>Required</sup> <a name="results" id="@newrelic/cdk-l2-dashboards.IEntitySearchResults.property.results"></a>
+
+```typescript
+public readonly results: IResult;
+```
+
+- *Type:* <a href="#@newrelic/cdk-l2-dashboards.IResult">IResult</a>
+
+---
+
+##### `types`<sup>Required</sup> <a name="types" id="@newrelic/cdk-l2-dashboards.IEntitySearchResults.property.types"></a>
+
+```typescript
+public readonly types: IType[];
+```
+
+- *Type:* <a href="#@newrelic/cdk-l2-dashboards.IType">IType</a>[]
+
+---
+
+### IQueryOptions <a name="IQueryOptions" id="@newrelic/cdk-l2-dashboards.IQueryOptions"></a>
+
+- *Implemented By:* <a href="#@newrelic/cdk-l2-dashboards.IQueryOptions">IQueryOptions</a>
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IQueryOptions.property.caseSensitiveTagMatching">caseSensitiveTagMatching</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IQueryOptions.property.limit">limit</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IQueryOptions.property.tagFilter">tagFilter</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `caseSensitiveTagMatching`<sup>Required</sup> <a name="caseSensitiveTagMatching" id="@newrelic/cdk-l2-dashboards.IQueryOptions.property.caseSensitiveTagMatching"></a>
+
+```typescript
+public readonly caseSensitiveTagMatching: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `limit`<sup>Required</sup> <a name="limit" id="@newrelic/cdk-l2-dashboards.IQueryOptions.property.limit"></a>
+
+```typescript
+public readonly limit: number;
+```
+
+- *Type:* number
+
+---
+
+##### `tagFilter`<sup>Required</sup> <a name="tagFilter" id="@newrelic/cdk-l2-dashboards.IQueryOptions.property.tagFilter"></a>
+
+```typescript
+public readonly tagFilter: string;
+```
+
+- *Type:* string
+
+---
+
+### IResult <a name="IResult" id="@newrelic/cdk-l2-dashboards.IResult"></a>
+
+- *Implemented By:* <a href="#@newrelic/cdk-l2-dashboards.IResult">IResult</a>
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IResult.property.entities">entities</a></code> | <code><a href="#@newrelic/cdk-l2-dashboards.IEntity">IEntity</a>[]</code> | *No description.* |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IResult.property.nextCursor">nextCursor</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `entities`<sup>Required</sup> <a name="entities" id="@newrelic/cdk-l2-dashboards.IResult.property.entities"></a>
+
+```typescript
+public readonly entities: IEntity[];
+```
+
+- *Type:* <a href="#@newrelic/cdk-l2-dashboards.IEntity">IEntity</a>[]
+
+---
+
+##### `nextCursor`<sup>Required</sup> <a name="nextCursor" id="@newrelic/cdk-l2-dashboards.IResult.property.nextCursor"></a>
+
+```typescript
+public readonly nextCursor: string;
+```
+
+- *Type:* string
+
+---
+
+### ITag <a name="ITag" id="@newrelic/cdk-l2-dashboards.ITag"></a>
+
+- *Implemented By:* <a href="#@newrelic/cdk-l2-dashboards.ITag">ITag</a>
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@newrelic/cdk-l2-dashboards.ITag.property.key">key</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@newrelic/cdk-l2-dashboards.ITag.property.values">values</a></code> | <code>string[]</code> | *No description.* |
+
+---
+
+##### `key`<sup>Required</sup> <a name="key" id="@newrelic/cdk-l2-dashboards.ITag.property.key"></a>
+
+```typescript
+public readonly key: string;
+```
+
+- *Type:* string
+
+---
+
+##### `values`<sup>Required</sup> <a name="values" id="@newrelic/cdk-l2-dashboards.ITag.property.values"></a>
+
+```typescript
+public readonly values: string[];
+```
+
+- *Type:* string[]
+
+---
+
+### IType <a name="IType" id="@newrelic/cdk-l2-dashboards.IType"></a>
+
+- *Implemented By:* <a href="#@newrelic/cdk-l2-dashboards.IType">IType</a>
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IType.property.count">count</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IType.property.domain">domain</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IType.property.entityType">entityType</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@newrelic/cdk-l2-dashboards.IType.property.type">type</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `count`<sup>Required</sup> <a name="count" id="@newrelic/cdk-l2-dashboards.IType.property.count"></a>
+
+```typescript
+public readonly count: number;
+```
+
+- *Type:* number
+
+---
+
+##### `domain`<sup>Required</sup> <a name="domain" id="@newrelic/cdk-l2-dashboards.IType.property.domain"></a>
+
+```typescript
+public readonly domain: string;
+```
+
+- *Type:* string
+
+---
+
+##### `entityType`<sup>Required</sup> <a name="entityType" id="@newrelic/cdk-l2-dashboards.IType.property.entityType"></a>
+
+```typescript
+public readonly entityType: string;
+```
+
+- *Type:* string
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="@newrelic/cdk-l2-dashboards.IType.property.type"></a>
+
+```typescript
+public readonly type: string;
+```
+
+- *Type:* string
 
 ---
 

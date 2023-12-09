@@ -5,7 +5,6 @@ export interface ITag{
   values: string[];
 }
 export interface IEntity{
-  __typename: string;
   accountId: number;
   alertSeverity: string;
   createdAt: string;
@@ -57,7 +56,6 @@ export interface IDashboardListResult{
         "results": {
           "entities": [
             {
-              "__typename": "DashboardEntityOutline",
               "accountId": 1606862,
               "alertSeverity": null,
               "createdAt": "2020-08-27T16:45:56Z",
@@ -108,7 +106,6 @@ export const ListDashboardsPageNext= gql `query ListDashboards(
     query
     results (cursor: $cursor) {
         entities {
-            __typename
             accountId
             alertSeverity
             domain
@@ -121,7 +118,6 @@ export const ListDashboardsPageNext= gql `query ListDashboards(
             tags { key values }
             type
             ... on DashboardEntityOutline {
-                __typename
                 createdAt
                 dashboardParentGuid
                 permissions
@@ -147,7 +143,6 @@ export const ListDashboardsPage1= gql `query ListDashboards(
     query
     results {
         entities {
-            __typename
             accountId
             alertSeverity
             domain
@@ -160,7 +155,6 @@ export const ListDashboardsPage1= gql `query ListDashboards(
             tags { key values }
             type
             ... on DashboardEntityOutline {
-                __typename
                 createdAt
                 dashboardParentGuid
                 permissions

@@ -9,6 +9,7 @@ import { ReadDashboard } from './docs/queries/readDashboard';
 import { DashboardInput, DashboardCreateResult, DashboardDeleteResult, DashboardUpdateResult, DashboardEntityResult } from './types';
 
 export * from './types';
+export * from './docs/queries/listDashboards';
 
 /*
   TODO Tagging (from new Construct)
