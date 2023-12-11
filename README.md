@@ -1,9 +1,11 @@
 <a href="https://opensource.newrelic.com/oss-category/#community-project"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github.com/newrelic/opensource-website/raw/main/src/images/categories/dark/Community_Project.png"><source media="(prefers-color-scheme: light)" srcset="https://github.com/newrelic/opensource-website/raw/main/src/images/categories/Community_Project.png"><img alt="New Relic Open Source community project banner." src="https://github.com/newrelic/opensource-website/raw/main/src/images/categories/Community_Project.png"></picture></a>
 
 [//]: # (CDK related badges)
-[![npm version](https://badge.fury.io/js/cdk-l2-dashboards)](https://badge.fury.io/js/cdk-l2-dashboards)
-[![PyPI version](https://badge.fury.io/py/cdk-l2-dashboards)](https://badge.fury.io/py/cdk-l2-dashboards)
-[![release](https://github.com/newrelic/cdk-l2-dashboards/actions/workflows/release.yml)](https://github.com/newrelic/cdk-l2-dashboards/actions/workflows/release.yml)
+[//]: # ([![npm version]&#40;https://badge.fury.io/js/cdk-l2-dashboards&#41;]&#40;https://badge.fury.io/js/cdk-l2-dashboards&#41;)
+
+[//]: # ([![PyPI version]&#40;https://badge.fury.io/py/cdk-l2-dashboards&#41;]&#40;https://badge.fury.io/py/cdk-l2-dashboards&#41;)
+
+[//]: # ([![release]&#40;https://github.com/newrelic/cdk-l2-dashboards/actions/workflows/release.yml&#41;]&#40;https://github.com/newrelic/cdk-l2-dashboards/actions/workflows/release.yml&#41;)
 
 #  CDK L2 Dashboards
 
