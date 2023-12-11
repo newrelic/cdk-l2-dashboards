@@ -1,13 +1,13 @@
 <a href="https://opensource.newrelic.com/oss-category/#community-project"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github.com/newrelic/opensource-website/raw/main/src/images/categories/dark/Community_Project.png"><source media="(prefers-color-scheme: light)" srcset="https://github.com/newrelic/opensource-website/raw/main/src/images/categories/Community_Project.png"><img alt="New Relic Open Source community project banner." src="https://github.com/newrelic/opensource-website/raw/main/src/images/categories/Community_Project.png"></picture></a>
 
 [//]: # (CDK related badges)
-[//]: # ([![npm version]&#40;https://badge.fury.io/js/cdk-l2-dashboards&#41;]&#40;https://badge.fury.io/js/cdk-l2-dashboards&#41;)
+[//]: # ([![npm version]&#40;https://badge.fury.io/js/cdk-dashboards&#41;]&#40;https://badge.fury.io/js/cdk-dashboards&#41;)
 
-[//]: # ([![PyPI version]&#40;https://badge.fury.io/py/cdk-l2-dashboards&#41;]&#40;https://badge.fury.io/py/cdk-l2-dashboards&#41;)
+[//]: # ([![PyPI version]&#40;https://badge.fury.io/py/cdk-dashboards&#41;]&#40;https://badge.fury.io/py/cdk-dashboards&#41;)
 
-[//]: # ([![release]&#40;https://github.com/newrelic/cdk-l2-dashboards/actions/workflows/release.yml&#41;]&#40;https://github.com/newrelic/cdk-l2-dashboards/actions/workflows/release.yml&#41;)
+[//]: # ([![release]&#40;https://github.com/newrelic/cdk-dashboards/actions/workflows/release.yml&#41;]&#40;https://github.com/newrelic/cdk-dashboards/actions/workflows/release.yml&#41;)
 
-#  CDK L2 Dashboards
+#  CDK Dashboards
 
 [AWS CDK](https://aws.amazon.com/cdk/) [Level 2](https://docs.aws.amazon.com/cdk/v2/guide/constructs.html#constructs_lib) [Constructs](https://constructs.dev/) for [New Relic Dashboards via the NerdGraph Graphql API.](https://docs.newrelic.com/docs/apis/nerdgraph/examples/nerdgraph-dashboards/)
 
@@ -15,7 +15,7 @@ This TypeScript code is [JSII](https://aws.github.io/jsii/) compatible and can b
 
 ## Installation
 ```bash
-npm install @newrelic/cdk-l2-dashboards
+npm install @newrelic/cdk-dashboards
 ```
 
 ## Use
