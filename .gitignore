@@ -37,7 +37,6 @@ cdk.out
 package-lock.json
 progen
 local
-!/.projenrc.js
 /test-reports/
 junit.xml
 /coverage/
@@ -57,3 +56,4 @@ junit.xml
 tsconfig.json
 !/API.md
 !/cdk.json
+!/.projenrc.ts
